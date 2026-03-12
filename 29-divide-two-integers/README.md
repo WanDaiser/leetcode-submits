@@ -4,6 +4,15 @@
 - Referenced submission: [`2025-08-24 16.15.44 - Accepted - runtime 0ms - memory 12.6MB.py`](./2025-08-24 16.15.44 - Accepted - runtime 0ms - memory 12.6MB.py)
 - Language: **Python**
 
+![Time](https://img.shields.io/badge/Estimated%20Time-~O(1)-blue) ![Space](https://img.shields.io/badge/Estimated%20Space-~O(1)-teal)
+
+## Complexity (Estimated)
+
+- Time: **~O(1)**
+- Space: **~O(1)**
+
+> These values are auto-estimated from code structure and should be treated as approximations.
+
 ## Approach
 
 - Direct conditional / arithmetic implementation

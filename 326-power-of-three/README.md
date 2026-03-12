@@ -4,6 +4,15 @@
 - Referenced submission: [`2025-10-17 14.36.17 - Accepted - runtime 4ms - memory 9.1MB.cpp`](./2025-10-17 14.36.17 - Accepted - runtime 4ms - memory 9.1MB.cpp)
 - Language: **C++**
 
+![Time](https://img.shields.io/badge/Estimated%20Time-~O(n)-blue) ![Space](https://img.shields.io/badge/Estimated%20Space-~O(1)-teal)
+
+## Complexity (Estimated)
+
+- Time: **~O(n)**
+- Space: **~O(1)**
+
+> These values are auto-estimated from code structure and should be treated as approximations.
+
 ## Approach
 
 - Iterative loop-based solution

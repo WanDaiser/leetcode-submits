@@ -4,6 +4,15 @@
 - Referenced submission: [`2025-11-05 22.03.08 - Accepted - runtime 0ms - memory 7.9MB.c`](./2025-11-05 22.03.08 - Accepted - runtime 0ms - memory 7.9MB.c)
 - Language: **C**
 
+![Time](https://img.shields.io/badge/Estimated%20Time-~O(n)-blue) ![Space](https://img.shields.io/badge/Estimated%20Space-~O(n)-teal)
+
+## Complexity (Estimated)
+
+- Time: **~O(n)**
+- Space: **~O(n)**
+
+> These values are auto-estimated from code structure and should be treated as approximations.
+
 ## Approach
 
 - Stack usage

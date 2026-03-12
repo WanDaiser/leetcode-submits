@@ -17,9 +17,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate solutions index
-        run: python scripts/generate_index.py
+      - name: Regenerate docs
+        run: |
+          python scripts/generate_index.py
+          python scripts/generate_problem_readmes.py
 
-      - name: Ensure index is committed
+      - name: Ensure generated docs are committed
         run: |
           git diff --exit-code docs/SOLUTIONS.md
+          git diff --exit-code */README.md

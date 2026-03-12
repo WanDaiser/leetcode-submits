@@ -4,6 +4,15 @@
 - Referenced submission: [`2025-11-17 09.00.43 - Accepted - runtime 395ms - memory 0.0B.sql`](./2025-11-17 09.00.43 - Accepted - runtime 395ms - memory 0.0B.sql)
 - Language: **SQL**
 
+![Time](https://img.shields.io/badge/Estimated%20Time-~O(n%20log%20n)-blue) ![Space](https://img.shields.io/badge/Estimated%20Space-~O(n)-teal)
+
+## Complexity (Estimated)
+
+- Time: **~O(n log n)**
+- Space: **~O(n)**
+
+> These values are auto-estimated from code structure and should be treated as approximations.
+
 ## Approach
 
 - Joining tables with `JOIN`

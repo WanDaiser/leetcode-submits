@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from complexity import estimate_complexity
+
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER_PATTERN = re.compile(r"^(?P<id>\d+)-(?P<slug>[a-z0-9-]+)$")
@@ -126,9 +128,24 @@ def build_readme(problem_id: int, slug: str, statement_file: Path | None, submis
         return "\n".join(lines)
 
     code = submission_file.read_text(encoding="utf-8", errors="ignore")
+    time_complexity, space_complexity = estimate_complexity(code, submission_file.suffix)
     techniques = detect_techniques(code, submission_file.suffix)
     steps = extract_steps(code, submission_file.suffix)
 
+    est_time = f"~{time_complexity}"
+    est_space = f"~{space_complexity}"
+    lines.append("![Time](https://img.shields.io/badge/Estimated%20Time-{}-blue) ![Space](https://img.shields.io/badge/Estimated%20Space-{}-teal)".format(
+        est_time.replace(" ", "%20").replace("+", "%2B"),
+        est_space.replace(" ", "%20").replace("+", "%2B"),
+    ))
+    lines.append("")
+    lines.append("## Complexity (Estimated)")
+    lines.append("")
+    lines.append(f"- Time: **{est_time}**")
+    lines.append(f"- Space: **{est_space}**")
+    lines.append("")
+    lines.append("> These values are auto-estimated from code structure and should be treated as approximations.")
+    lines.append("")
     lines.append("## Approach")
     lines.append("")
     for item in techniques:

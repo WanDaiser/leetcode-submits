@@ -5,6 +5,8 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
+from complexity import estimate_complexity
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "docs"
@@ -40,6 +42,8 @@ class ProblemRow:
     submission_count: int
     latest_submission: str
     languages: tuple[str, ...]
+    time_complexity: str
+    space_complexity: str
 
 
 def collect_rows() -> list[ProblemRow]:
@@ -65,6 +69,11 @@ def collect_rows() -> list[ProblemRow]:
             }
         )
         latest_submission = submissions[-1].name if submissions else "-"
+        if submissions:
+            code = submissions[-1].read_text(encoding="utf-8", errors="ignore")
+            time_complexity, space_complexity = estimate_complexity(code, submissions[-1].suffix)
+        else:
+            time_complexity, space_complexity = "N/A", "N/A"
 
         rows.append(
             ProblemRow(
@@ -75,6 +84,8 @@ def collect_rows() -> list[ProblemRow]:
                 submission_count=len(submissions),
                 latest_submission=latest_submission,
                 languages=tuple(languages),
+                time_complexity=time_complexity,
+                space_complexity=space_complexity,
             )
         )
 
@@ -109,15 +120,15 @@ def render_markdown(rows: list[ProblemRow]) -> str:
     lines.append("")
     lines.append("## Problem List")
     lines.append("")
-    lines.append("| # | Problem | Submissions | Languages | Latest Submission |")
-    lines.append("|---:|---|---:|---|---|")
+    lines.append("| # | Problem | Submissions | Languages | Time (est.) | Space (est.) | Latest Submission |")
+    lines.append("|---:|---|---:|---|---|---|---|")
 
     for row in rows:
         problem_name = row.slug.replace("-", " ").title()
         languages = ", ".join(row.languages) if row.languages else "-"
         lines.append(
             f"| {row.problem_id} | [{problem_name}](../{row.folder}) | "
-            f"{row.submission_count} | {languages} | `{row.latest_submission}` |"
+            f"{row.submission_count} | {languages} | ~{row.time_complexity} | ~{row.space_complexity} | `{row.latest_submission}` |"
         )
 
     lines.append("")

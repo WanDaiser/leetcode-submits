@@ -4,6 +4,15 @@
 - Referenced submission: [`2025-10-29 16.52.28 - Accepted - runtime 49ms - memory 12.4MB.py`](./2025-10-29 16.52.28 - Accepted - runtime 49ms - memory 12.4MB.py)
 - Language: **Python**
 
+![Time](https://img.shields.io/badge/Estimated%20Time-~O(n)-blue) ![Space](https://img.shields.io/badge/Estimated%20Space-~O(n)-teal)
+
+## Complexity (Estimated)
+
+- Time: **~O(n)**
+- Space: **~O(n)**
+
+> These values are auto-estimated from code structure and should be treated as approximations.
+
 ## Approach
 
 - Iterative loop-based solution

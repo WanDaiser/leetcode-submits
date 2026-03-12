@@ -4,6 +4,15 @@
 - Referenced submission: [`2025-10-19 06.09.46 - Accepted - runtime 23ms - memory 15MB.py`](./2025-10-19 06.09.46 - Accepted - runtime 23ms - memory 15MB.py)
 - Language: **Python**
 
+![Time](https://img.shields.io/badge/Estimated%20Time-~O(n%20log%20n)-blue) ![Space](https://img.shields.io/badge/Estimated%20Space-~O(n)-teal)
+
+## Complexity (Estimated)
+
+- Time: **~O(n log n)**
+- Space: **~O(n)**
+
+> These values are auto-estimated from code structure and should be treated as approximations.
+
 ## Approach
 
 - Hash-table based lookup
