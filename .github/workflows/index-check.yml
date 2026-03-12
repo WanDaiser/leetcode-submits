@@ -1,0 +1,25 @@
+name: Index Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate solutions index
+        run: python scripts/generate_index.py
+
+      - name: Ensure index is committed
+        run: |
+          git diff --exit-code docs/SOLUTIONS.md
