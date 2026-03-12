@@ -1,0 +1,18 @@
+# 342. Power Of Four
+
+- Problem statement: [`342-power-of-four.md`](./342-power-of-four.md)
+- Referenced submission: [`2025-10-13 22.39.46 - Accepted - runtime 0ms - memory 12.4MB.py`](./2025-10-13 22.39.46 - Accepted - runtime 0ms - memory 12.4MB.py)
+- Language: **Python**
+
+## Approach
+
+- Direct conditional / arithmetic implementation
+
+## Step-by-Step Code Walkthrough
+
+- Function signature: `def isPowerOfFour(self, n):`
+- Return path: `return (True if n>0 and ( n & (n-1)) == 0 and n%3==1 else False)`
+
+## Note
+
+This file is auto-generated from your currently accepted submission code.

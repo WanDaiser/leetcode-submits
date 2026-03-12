@@ -1,0 +1,18 @@
+# 2058. Concatenation Of Array
+
+- Problem statement: [`2058-concatenation-of-array.md`](./2058-concatenation-of-array.md)
+- Referenced submission: [`2025-11-17 14.38.01 - Accepted - runtime 0ms - memory 12.8MB.py`](./2025-11-17 14.38.01 - Accepted - runtime 0ms - memory 12.8MB.py)
+- Language: **Python**
+
+## Approach
+
+- Direct conditional / arithmetic implementation
+
+## Step-by-Step Code Walkthrough
+
+- Function signature: `def getConcatenation(self, nums):`
+- Return path: `return nums *2`
+
+## Note
+
+This file is auto-generated from your currently accepted submission code.
